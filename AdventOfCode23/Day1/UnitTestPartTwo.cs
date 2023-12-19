@@ -2,31 +2,9 @@ using static AdventOfCode23.Day1.CalibrationSolver;
 
 namespace AdventOfCode23.Day1;
 
-public class Tests
+public class TestsPartTwo
 {
-    [SetUp]
-    public void Setup()
-    {
-    }
-
-    [Test]
-    public void Test1()
-    {
-        string testCalibrationString = @"1abc2
-pqr3stu8vwx
-a1b2c3d4e5f
-treb7uchet";
-        
-        var CalibrationSolver = new CalibrationSolver();
-        int result = CalibrationSolver.SolveString(testCalibrationString);
-        int expected = 142;
-        Assert.AreEqual(expected, result);
-    }
-    
-    [Test]
-    public void Test2()
-    {
-        string testCalibrationString = @"9eightone
+    const string INPUT_TEXT = @"9eightone
 hczsqfour3nxm5seven4
 9twopjqkghmbone
 rhrfthv886vflthreeztvzs
@@ -1026,10 +1004,36 @@ lpklkskgcsr8eightsbxcjx
 nx9ninekvzzdlncblkdqbgspdfkcx
 tfn5kx6twojmzgbdznc2
 5bszzkpcdxqkvkf7tgcone2";
+    
+    [SetUp]
+    public void Setup()
+    {
+    }
+
+    [Test]
+    public void Test1()
+    {string testCalibrationString = @"two1nine
+eightwothree
+abcone2threexyz
+xtwone3four
+4nineeightseven2
+zoneight234
+7pqrstsixteen";
         
-        var CalibrationSolver = new CalibrationSolver();
-        int result = CalibrationSolver.SolveString(testCalibrationString);
-        int expected = 55477;
+        var calibrationSolver = new CalibrationSolver();
+        int result = calibrationSolver.SolveString(testCalibrationString, true);
+        int expected = 281;
+        Assert.AreEqual(expected, result);
+    }
+    
+    [Test]
+    public void Test2()
+    {
+        string testCalibrationString = INPUT_TEXT;
+        
+        var calibrationSolver = new CalibrationSolver();
+        int result = calibrationSolver.SolveString(testCalibrationString, true);
+        int expected = 0;
         Assert.AreEqual(expected, result);
     }
 }
